@@ -1,0 +1,14 @@
+C:\development\AzureDataSecurity\AzureDataSecurity\bin\Debug\netcoreapp2.2\AzureDataSecurity.deps.json
+C:\development\AzureDataSecurity\AzureDataSecurity\bin\Debug\netcoreapp2.2\AzureDataSecurity.runtimeconfig.json
+C:\development\AzureDataSecurity\AzureDataSecurity\bin\Debug\netcoreapp2.2\AzureDataSecurity.runtimeconfig.dev.json
+C:\development\AzureDataSecurity\AzureDataSecurity\bin\Debug\netcoreapp2.2\AzureDataSecurity.dll
+C:\development\AzureDataSecurity\AzureDataSecurity\obj\Debug\netcoreapp2.2\AzureDataSecurity.csprojAssemblyReference.cache
+C:\development\AzureDataSecurity\AzureDataSecurity\obj\Debug\netcoreapp2.2\AzureDataSecurity.csproj.CoreCompileInputs.cache
+C:\development\AzureDataSecurity\AzureDataSecurity\obj\Debug\netcoreapp2.2\AzureDataSecurity.RazorAssemblyInfo.cache
+C:\development\AzureDataSecurity\AzureDataSecurity\obj\Debug\netcoreapp2.2\AzureDataSecurity.RazorAssemblyInfo.cs
+C:\development\AzureDataSecurity\AzureDataSecurity\obj\Debug\netcoreapp2.2\AzureDataSecurity.AssemblyInfoInputs.cache
+C:\development\AzureDataSecurity\AzureDataSecurity\obj\Debug\netcoreapp2.2\AzureDataSecurity.AssemblyInfo.cs
+C:\development\AzureDataSecurity\AzureDataSecurity\obj\Debug\netcoreapp2.2\AzureDataSecurity.RazorTargetAssemblyInfo.cache
+C:\development\AzureDataSecurity\AzureDataSecurity\bin\Debug\netcoreapp2.2\AzureDataSecurity.pdb
+C:\development\AzureDataSecurity\AzureDataSecurity\obj\Debug\netcoreapp2.2\AzureDataSecurity.dll
+C:\development\AzureDataSecurity\AzureDataSecurity\obj\Debug\netcoreapp2.2\AzureDataSecurity.pdb
