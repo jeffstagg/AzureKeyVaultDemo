@@ -26,22 +26,7 @@ namespace AzureDataSecurity
                 .ConfigureAppConfiguration((hostContext, config) =>
                 {
                     config.Sources.Clear();
-
-                    //this will allow us to grab the connection string
                     config.AddJsonFile("appsettings.json");
-
-                    //build the configuration, then we can pull items from it.
-                    var builtConfig = config.Build();
-
-                    //set up keyvault
-                    //var tokenProvider = new AzureServiceTokenProvider();
-                    //var keyvaultClient = new KeyVaultClient((authority, resource, scope) =>
-                    //    tokenProvider.KeyVaultTokenCallback(authority, resource, scope));
-                    //config.AddAzureKeyVault(
-                    //    builtConfig["Environment:KeyvaultEndpoint"],
-                    //    keyvaultClient,
-                    //    new DefaultKeyVaultSecretManager());
-
                 })
                 .UseStartup<Startup>()
                 .Build();
