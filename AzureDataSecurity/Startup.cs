@@ -27,6 +27,7 @@ namespace AzureDataSecurity
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
+            //this line stays the same - you will still be using the Configuration object
                 options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"])
             );
 
