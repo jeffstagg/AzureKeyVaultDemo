@@ -27,6 +27,18 @@ namespace AzureDataSecurity
                 {
                     config.Sources.Clear();
                     config.AddJsonFile("appsettings.json");
+                    
+                    //build the configuration object, then grab the keyvault endpoint from it to set up keyvault
+                    var builtDevConfig = config.Build();
+                    var tokenProvider = new AzureServiceTokenProvider();
+                    var keyvaultClient = new KeyVaultClient(
+                            new KeyVaultClient.AuthenticationCallback(
+                                tokenProvider.KeyVaultTokenCallback));
+
+                    config.AddAzureKeyVault(
+                        builtDevConfig["ConnectionStrings:KeyvaultEndpoint"],
+                        keyvaultClient,
+                        new DefaultKeyVaultSecretManager());
                 })
                 .UseStartup<Startup>()
                 .Build();
