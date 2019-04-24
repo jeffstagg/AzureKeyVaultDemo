@@ -31,6 +31,8 @@ namespace AzureDataSecurity
                 options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"])
             );
 
+            services.AddDataProtection();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 

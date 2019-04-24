@@ -14,18 +14,35 @@ namespace AzureDataSecurity.Controllers
     public class PeopleController : ControllerBase
     {
         private ApplicationDbContext _dbContext;
+        IDataProtector _dataProtector;
 
         public PeopleController(
-            ApplicationDbContext dbContext
+            ApplicationDbContext dbContext,
+            IDataProtectionProvider dataProtectionProvider
             )
         {
             _dbContext = dbContext;
+            _dataProtector = dataProtectionProvider.CreateProtector("PersonalDataEncryption");
         }
 
         [HttpGet]
         public IActionResult Index()
         {
             var people = _dbContext.People.ToList();
+
+            foreach (var person in people)
+            {
+                try
+                {
+                    person.Name = _dataProtector.Unprotect(person.Name);
+                    person.Email = _dataProtector.Unprotect(person.Email);
+                    person.Phone = _dataProtector.Unprotect(person.Phone);
+                }
+                catch (Exception ex)
+                {
+                    continue;
+                }
+            }
 
             return Ok(people);
         }
@@ -34,6 +51,14 @@ namespace AzureDataSecurity.Controllers
         public IActionResult AddPerson(Person person)
         {
             var people = _dbContext.People;
+
+            try
+            {
+                person.Name = _dataProtector.Protect(person.Name);
+                person.Email = _dataProtector.Protect(person.Email);
+                person.Phone = _dataProtector.Protect(person.Phone);
+            }
+            catch { }
             
             people.Add(person);
 
