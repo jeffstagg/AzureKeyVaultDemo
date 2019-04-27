@@ -50,7 +50,7 @@ namespace AzureDataSecurity
 
                 //we will store our keys in Azure blob storage
                 .PersistKeysToAzureBlobStorage(
-                    new Uri($"https://{blobAccount}.blob.core.windows.net/{blobContainer}/{blobName}?{sasToken}"))
+                    new Uri($"https://{blobAccount}.blob.core.windows.net/{blobContainer}/{blobName}{sasToken}"))
 
                 //we will protect those keys with the Azure key vault
                 .ProtectKeysWithAzureKeyVault(
